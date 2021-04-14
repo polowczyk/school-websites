@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="Dawid Polowczyk">
+    <link rel="icon" href="https://img.icons8.com/pastel-glyph/2x/clock--v2.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <title>Data i czas</title>
+    <style>
+        * {
+            margin: 0 auto;
+            color: white;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        body {
+            background-color: rgb(58, 58, 58);
+        }
+
+        .container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .holder {
+            background-color: rgb(36, 36, 36);
+            color: white;
+            border-radius: 40px;
+            padding: 40px;
+            font-size: 30px;
+            text-align: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .spantext {
+            display: block;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 20px;
+            background-color: rgb(56, 56, 56);
+        }
+
+        .spantext:hover {
+            background-color: rgb(66, 66, 66);
+        }
+
+        #rainbowText {
+            animation-name: BGC;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes BGC {
+            0% {
+                color: rgb(255, 86, 86);
+            }
+
+            10% {
+                color: rgb(241, 185, 80);
+            }
+
+            20% {
+                color: rgb(255, 255, 98);
+            }
+
+            30% {
+                color: rgb(140, 240, 140);
+            }
+
+            40% {
+                color: rgb(93, 233, 219);
+            }
+
+            50% {
+                color: rgb(92, 92, 255);
+            }
+
+            55% {
+                color: rgb(146, 5, 146);
+            }
+
+            60% {
+                color: rgb(92, 92, 255);
+            }
+
+            65% {
+                color: rgb(93, 233, 219);
+            }
+
+            70% {
+                color: rgb(176, 241, 176);
+            }
+
+            80% {
+                color: rgb(255, 255, 98);
+            }
+
+            90% {
+                color: rgb(253, 193, 82);
+            }
+
+            100% {
+                color: rgb(255, 86, 86);
+            }
+        }
+
+        .secret{
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 30px;
+        }
+
+        .secret:hover{
+            background-color: rgb(43, 43, 43);
+        }
+    </style>
+</head>
+
+<body onload="startTime()">
+    <div class="container">
+        <div class="holder">
+            <span class="spantext" id="rainbowText" style="font-size: 40px; letter-spacing: 0.2em; padding: 30px;">DZIŚ JEST</span>
+            <span class="spantext" id="day"></span>
+            <span class="spantext" id="month"></span>
+            <span class="spantext" id="year"></span>
+            <span class="spantext" id="fulldatestatic" style="font-size: 25px;"></span>
+            <span class="spantext" id="fulldatedynamic" style="font-size: 20px;"></span>
+        </div>
+        <span class="spantext" style="text-align: center; background-color: rgb(36, 36, 36);"><span class="secret" ondblclick="secret()">Autor: Dawid Polowczyk</span></span>
+    </div>
+
+    <script>
+        function startTime() {
+
+            var now = new Date();
+            var day = now.getDate();
+            var month = now.getMonth();
+            month = month + 1;
+            var year = now.getFullYear();
+            var sec = now.getSeconds();
+            var min = now.getMinutes();
+            var hou = now.getHours();
+
+            sec = checkTime(sec);
+            min = checkTime(min);
+            hou = checkTime(hou);
+
+            var days = ["niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota"];
+            var dayName = days[now.getDay()];
+
+            
+            var dholder = document.getElementById("day");
+            var mholder = document.getElementById("month");
+            var yholder = document.getElementById("year");
+            var fds = document.getElementById("fulldatestatic");
+            var fdd = document.getElementById("fulldatedynamic");
+
+            var staticformatter = new Intl.DateTimeFormat('pl', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+            var static = staticformatter.format(new Date());
+
+            dholder.innerHTML = "Dzień: " + day;
+            mholder.innerHTML = "Miesiąc: " + month;
+            yholder.innerHTML = "Rok: " + year;
+            fds.innerHTML = static + " roku";
+            fdd.innerHTML = static + "r., " + dayName + " " + hou + ":" + min + ":" + sec;
+
+            var t = setTimeout(startTime, 100);
+            function checkTime(i) {
+                if (i < 10) { i = "0" + i };
+                return i;
+            }
+
+        }
+
+        function secret(){
+            alert("Znalazłeś sekret!");
+            var r = confirm("Chcesz odwiedzić portfolio autora strony?");
+            if (r == true) {
+                window.open('http://polowczyk-portfolio.pl/','_blank');
+            }else{
+                alert("Szkoda 😢");
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

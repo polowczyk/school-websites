@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Zadanie</title>
+</head>
+<body>
+<div class="container">
+    <div class="text" id="txt">Dawid Polowczyk</div>
+</div>
+
+<script>
+    var txt = document.getElementById("txt");
+    txt.ondblclick=function(){
+        txt.style.fontSize="50px";
+        txt.style.fontWeight="800";
+        txt.style.textDecoration="underline";
+    }
+    
+    txt.onclick=function(){
+        txt.style.fontSize="40px";
+        txt.style.color="white";
+        txt.style.fontFamily="Verdana";
+        txt.style.textDecoration="none";
+        txt.style.fontWeight="400";
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <meta author="Dawid Polowczyk">
+    <title>Zadanie</title>
+</head>
+<body>
+
+<script>
+    function reset(){
+        document.getElementById("form3").value = "";
+        document.getElementById('form3').style.background = "";
+        var r = Math.floor(Math.random() * 11); 
+        var r2 = Math.floor(Math.random() * 11);
+        document.getElementById("form").value = r;
+        document.getElementById("form2").value = r2;
+
+    }
+    function check(){
+        var r1 = document.getElementById('form').value;
+        var r2 = document.getElementById('form2').value;
+        r1 = parseInt(r1);
+        r2 = parseInt(r2);
+        var result=r1+r2;
+        result = parseInt(result);
+        var answer = document.getElementById('form3').value;
+        if(answer == result){
+            document.getElementById('form3').style.background = "rgba(71, 245, 71, 0.712)";
+        }else{
+            document.getElementById('form3').style.background = "rgba(255, 86, 86, 0.712)";
+        }
+    }
+</script>
+
+<!--LANDING PAGE--> 
+    <div class="wrapper">
+<!--Main baner-->
+    <div class="baner">
+        <div class="entry-text" class="btn">
+            <span>CHECK YOUR MATH <span class="rainbowText">SKILL</span></span><br>
+            <p>How it works? To start click "RESULT BOX". When 2 random numbers appear, you have to make calculations for yourself, and then write down your result into result box. To chcek if your answer is correct, click "check your result" button. When background on result input turns green, it indicate that your math was correct, but if it's red, that means that you made a mistake and your calculations were wrong. To do next caluluation click "RESULT BOX". Have fun :) </p>
+            <p>Author: Dawid Polowczyk</p>
+            <form class="box" action="index.html" method="post">
+                <input type="number" id="form" name="" value="" placeholder="1.Random" disabled>
+                <h1>+</h1>
+                <input type="number" id="form2" name="" value="" placeholder="2.Random"  disabled>
+                <h1>=</h1>
+                <a href="javascript:reset();"><input type="number" id="form3" name="" value="" placeholder="Result"></a>
+            </form>
+            <div class="buttons">
+                <button class="submit" onclick="check()">Check your result</button>
+            </div>
+        </div>
+    </div>
+
+<!--Stars Background API-->
+    <div id="particles-js"></div>
+    <script src="./scripts/particles.js"></script>
+    <script src="./scripts/app.js"></script> 
+
+    </div>
+
+
+</body>
+</html>

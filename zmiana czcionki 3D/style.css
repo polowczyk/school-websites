@@ -1,0 +1,91 @@
+* {
+  margin: 0 auto;
+}
+
+body {
+  background: linear-gradient(to right, #ffb703, #fb8500);
+  color: white;
+}
+
+.cards-wrapper {
+  margin-top: 25vh;
+}
+
+hr {
+  margin: 10px;
+}
+
+.card-container {
+  perspective: 1200px;
+}
+
+.card {
+  margin: 0 auto;
+  height: 50vh;
+  width: 50%;
+  max-width: 80%;
+  position: relative;
+  border-radius: 90px;
+  transition: all 1s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.281), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rotated {
+  transform: rotateY(-180deg);
+}
+
+.card-contents {
+  width: 100%;
+  height: 100%;
+  border-radius: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.card-depth {
+  transform: translateZ(100px) scale(0.98);
+  perspective: inherit;
+
+}
+
+.card-front {
+  background: linear-gradient(to top left, #8ecae6, #07547a);
+  transform-style: preserve-3d;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(to top left, #03045e, #0077b6);
+  transform-style: preserve-3d;
+}
+
+#small {
+  display: inline-block;
+  margin: 10px;
+  font-size: 10px;
+}
+
+#medium {
+  display: inline-block;
+  margin: 10px;
+  font-size: 20px;
+}
+
+#big {
+  display: inline-block;
+  margin: 10px;
+  font-size: 30px;
+}
+
+.text-container {
+  width: 70%;
+}

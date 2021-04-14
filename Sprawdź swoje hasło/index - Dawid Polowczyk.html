@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="Dawid Polowczyk">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <meta author="Dawid Polowczyk">
+    <title>Hasło</title>
+    <style>
+        * {
+            margin: 0 auto;
+            color: white;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        body {
+            background-color: rgb(58, 58, 58);
+        }
+
+        .container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .holder {
+            background-color: rgb(36, 36, 36);
+            color: white;
+            border-radius: 40px;
+            padding: 40px;
+            font-size: 30px;
+            text-align: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .spantext {
+            display: block;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 20px;
+            background-color: rgb(56, 56, 56);
+        }
+
+        #rainbowText {
+            animation-name: BGC;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes BGC {
+            0% {
+                color: rgb(255, 86, 86);
+            }
+
+            10% {
+                color: rgb(241, 185, 80);
+            }
+
+            20% {
+                color: rgb(255, 255, 98);
+            }
+
+            30% {
+                color: rgb(140, 240, 140);
+            }
+
+            40% {
+                color: rgb(93, 233, 219);
+            }
+
+            50% {
+                color: rgb(92, 92, 255);
+            }
+
+            55% {
+                color: rgb(146, 5, 146);
+            }
+
+            60% {
+                color: rgb(92, 92, 255);
+            }
+
+            65% {
+                color: rgb(93, 233, 219);
+            }
+
+            70% {
+                color: rgb(176, 241, 176);
+            }
+
+            80% {
+                color: rgb(255, 255, 98);
+            }
+
+            90% {
+                color: rgb(253, 193, 82);
+            }
+
+            100% {
+                color: rgb(255, 86, 86);
+            }
+        }
+
+        .secret{
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 30px;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        .secret:hover{
+            background-color: rgb(43, 43, 43);
+        }
+
+        input {
+            background-color: rgb(44, 44, 44);
+            border-radius: 10px;
+            margin: 10px;
+            width: 25%;
+            border: 0;
+            padding: 5px;
+        }
+
+        input:hover{
+            cursor: pointer;
+            background-color: rgb(39, 39, 39);
+        }
+
+        #content{
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="holder">
+            <span class="spantext" id="rainbowText" style="font-size: 40px; letter-spacing: 0.2em; padding: 30px;">SPRAWDŹ SWOJE HASŁO</span>
+            <span class="spantext" id="content">
+                <input type="password" id="pass" placeholder="Wpisz hasło">
+                <input type="submit" value="SPRAWDŹ" onclick="checkFunction()">
+                <input type="submit" value="RESET" onclick="reset()">
+            </span>
+            <span class="spantext">
+                <span id="respond" style="font-size:25px;">WPISZ SWOJE HASŁO</span>
+            </span>
+        </div>
+        <span class="spantext" style="text-align: center; background-color: rgb(36, 36, 36);"><span class="secret" ondblclick="secret()">Autor: Dawid Polowczyk</span></span>
+    </div>
+
+    <script>
+    
+        function secret(){
+            alert("Znalazłeś sekret!");
+            var r = confirm("Chcesz odwiedzić portfolio autora strony?");
+            if (r == true) {
+                window.open('http://polowczyk-portfolio.pl/','_blank');
+            }else{
+                alert("Szkoda 😢");
+            }
+        }
+
+        function checkFunction(){
+            var pass = document.getElementById("pass").value;
+            var respond = document.getElementById("respond");
+            var length = pass.length;
+            if(length >= 5){
+                respond.innerHTML = "<span  id=\"rainbowText\"> " + length +  "</span> znakowe hasło jest poprawne, podałeś hasło: " + "<span  id=\"rainbowText\"> " + pass.toUpperCase() + "</span>";
+            }else{
+
+                respond.innerHTML = "<span  id=\"rainbowText\"> " + length +  "</span> znakowe hasło jest za <span id=\"rainbowText\">krótkie!</span>";
+            }
+        }
+
+        function reset(){
+            respond.innerHTML ="WPISZ SWOJE HASŁO";
+        }
+
+    </script>
+
+</body>
+
+</html>

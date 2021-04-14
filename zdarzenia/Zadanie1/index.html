@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Zadanie</title>
+</head>
+<body>
+<div class="container">
+    <div class="square" id="sqr"></div>
+</div>
+<script>
+var sqr = document.getElementById("sqr");
+sqr.onmouseover=function(){
+    sqr.style.backgroundColor="#751A33";
+    sqr.style.border="5px solid #D4B95E";
+}
+
+sqr.onmouseout=function(){
+    sqr.style.backgroundColor="#4EA2A2";
+    sqr.style.border="3px dotted #1A8693";
+}
+</script>
+</body>
+</html>

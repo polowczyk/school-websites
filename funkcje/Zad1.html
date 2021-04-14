@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 1</title>
+</head>
+<body>
+    
+    <input type="text" name="" id="x">
+    <input type="text" name="" id="y">
+    <input id="button" type="submit" name="button" onclick="suma();" value="enter"/><br>
+    <span id="result"></span>
+    <script>
+    function suma(){
+    document.getElementById('result').innerHTML = "Result is: ";   
+    var $x = document.getElementById('x').value;
+    var $y = document.getElementById('y').value;
+    $x = parseInt($x);
+    $y = parseInt($y);
+    $result = $x+$y;
+    document.getElementById('result').innerHTML += $result;
+    }; 
+</script>
+</body>
+</html>
+

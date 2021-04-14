@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Matematyka - Dawid Polowczyk</title>
+</head>
+<body>
+    <div class="container">
+        <div class="top"><img src="./baner.jpg"></div>
+        <div class="bottom-left">
+            <ul>
+                <li onclick="cleartext()">Menu</li>
+                <li onclick="autorname()">Opis</li>
+                <li onclick="numberdetermination()">Jaka to liczba</li>
+                <li onclick="numberstring()">Liczby całkowite z zakresu</li>
+             </ul> 
+        </div>
+        <div class="bottom-right">
+            <ul>
+                <li id="holder"></li>
+             </ul>
+        </div>
+       
+    </div>
+
+    <script>
+        var holder = document.getElementById("holder");
+
+        function cleartext(){
+            holder.innerHTML = " ";
+        }
+
+        function autorname(){
+            holder.innerHTML = "Dawid Polowczyk";
+        }
+
+        function numberdetermination(){
+            var pass = prompt("Podaj hasło dostępu");
+            if(pass=="liczba"){
+                var check = prompt("Podaj cyfre do sprawdzenia");
+                if(check > 0){
+                    holder.innerHTML = check + " jest dodatnie";
+                }else if(check < 0){
+                    holder.innerHTML = check + " jest ujemne";
+                }else{
+                    holder.innerHTML = check + " nie posiada warotści dodatniej lub ujemnej";
+                }
+
+            }else{
+                holder.innerHTML = "Błędne hasło dostępu!";
+            }
+        }
+
+        function numberstring(){
+            var n1=parseInt(prompt("Podaj pierwszą cyfrę ciągu"));
+            var n2=parseInt(prompt("Podaj ostatnią liczbę ciągu"));
+            
+            holder.innerHTML = " ";
+
+            if(n1 < n2){
+                for(i=n1; i<n2+1; i++)
+                holder.innerHTML += (i+", "); 
+            }
+            else if(n1 > n2){
+                for(i=n1; i>n2-1; i--)
+                holder.innerHTML += (i+", ");
+            }
+            
+        }
+        
+    </script>
+
+</body>
+</html>

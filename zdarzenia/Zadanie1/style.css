@@ -1,0 +1,23 @@
+*{
+    margin: 0 auto;
+}
+
+body{
+    background-color: #D28F33;
+}
+
+.container{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.square{
+    width: 25vh;
+    height: 25vh;
+    background-color: #4EA2A2;
+    border: 3px dotted #1A8693;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <meta author="Dawid Polowczyk">
+    <title>Kwadraty</title>
+</head>
+<body>
+
+<script>
+
+function box2function(){
+    document.getElementById("firstbox").style.backgroundColor = "#540d6e";
+}
+
+function box3function(){
+    document.getElementById("secondbox").style.backgroundColor = "#ee4266";
+}
+
+function box4function(){
+    document.getElementById("thirdbox").style.backgroundColor = "#7209b7";
+}
+
+function box5function(){
+    document.getElementById("fourthbox").style.backgroundColor = "#3bceac";
+}
+
+function reset(){
+    document.getElementById("firstbox").style.backgroundColor = "#264653";
+    document.getElementById("secondbox").style.backgroundColor = "#2A9D8F";
+    document.getElementById("thirdbox").style.backgroundColor = "#E9C46A";
+    document.getElementById("fourthbox").style.backgroundColor = "#F4A261";
+    document.getElementById("fifthbox").style.backgroundColor = "#E76F51";
+}  
+
+</script>
+
+    <div class="wrapper">
+
+    <div class="baner">
+        <div class="entry-text" class="btn">
+            <span>HAVE FUN WITH <span class="rainbowText">SQUARES</span></span><br>
+            <p>HOW IT WORKS? HOVER OVER ANY SQUARE TO CHANGE COLOR OF SQUARE TO THE LEFT! TO RESET ALL SQUARES CLICK ON LAST ("5") SQUARE. THAT'S IT, HAVE FUN :)</p>
+            <p>Author: Dawid Polowczyk</p>
+            <div class="container">
+                <div id="firstbox" class="box"><p>1</p></div>
+                <div id="secondbox" class="box" onmouseover="box2function()"><p>2</p></div>
+                <div id="thirdbox" class="box" onmouseover="box3function()"><p>3</p></div>
+                <div id="fourthbox" class="box" onmouseover="box4function()"><p>4</p></div>
+                <div id="fifthbox" class="box" onmouseover="box5function()" onclick="reset()"><p>5</p></div><br>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie Tablice</title>
+    <meta author="Dawid Polowczyk">
+    <style>
+        * {
+            margin: 0 auto;
+        }
+
+        body {
+            background-color: rgb(41, 41, 41);
+            text-align: center;
+        }
+
+        .main-block {
+            padding: 50px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 30px;
+            font-size: 30px;
+            color: white;
+            box-shadow: 5px 10px #868686;
+            background-color: rgb(53, 53, 53);
+            text-align: center;
+        }
+
+        .header{
+            display: block;
+            font-size: 35px;
+            padding: 15px;
+            background-color: #646464;
+            border-radius: 20px;
+            margin: 10px;
+        }
+
+        .text-input{
+            display: inline-block;
+            padding: 15px;
+            background-color: #646464;
+            border-radius: 20px;
+            color: white;
+            margin: 10px;
+            margin-top: 25px;
+        }
+
+        #btn{
+            display: inline-block;
+            padding: 15px;
+            background-color: #646464;
+            border-radius: 20px;
+            color: white;
+            margin: 10px;
+            margin-top: 25px;
+        }
+
+        #content{
+            display: block;
+            padding: 15px;
+            background-color: #646464;
+            border-radius: 20px;
+            color: white;
+            margin: 10px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-block">
+            <span id="block-content">
+                <span class="header">Dodaj Wpis</span>
+                <input type="text" class="text-input" placeholder="Podaj wpis" id="txt" autofocus>
+                <input type="submit" id="btn" onclick="mainFunction()">
+                <p id="content"></p>
+                <script>
+                    var tab = new Array();
+                    var tmp = 0;
+                    function mainFunction() {
+                        txt = document.getElementById("txt").value;
+                        if (txt == "") {
+                            alert("Wpisz coś w pole");
+                        }else {
+                            txt = txt.toLowerCase();
+                            tab[tmp] = txt.charAt(0).toUpperCase() + txt.slice(1);
+                            tmp++;
+                            tab.sort();
+                            content.innerHTML = tab + ",";
+                        }
+                        txt = ' ';
+                        document.getElementById('txt').focus();
+                    }
+
+                </script>
+            </span>
+        </div>
+    </div>
+
+</body>
+
+</html>

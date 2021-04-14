@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 3</title>
+</head>
+<body>
+    <input type="text" name="" id="x" placeholder="a">
+    <input type="text" name="" id="y" placeholder="b">
+    <input type="text" name="" id="z" placeholder="c">
+    <input id="button" type="submit" name="button" onclick="trojkot();" value="enter"/><br>
+    <span id="result"></span>
+    <script>
+        function trojkot(){
+            document.getElementById('result').innerHTML = "";
+            var $a = document.getElementById('x').value;
+            var $b = document.getElementById('y').value;
+            var $c = document.getElementById('z').value;
+            $a = parseInt($a);
+            $b = parseInt($b);
+            $c = parseInt($c);
+            $ab = $a + $b;
+            $ac = $a + $c;
+            $bc = $b + $c;
+            if($ab > $c && $ac > $b && $bc > $a){
+                document.getElementById('result').innerHTML = "Można stworzyć trójkąt"; 
+            }else{
+                document.getElementById('result').innerHTML = "Nie można stworzyć trójkątat";
+            }
+        }
+    </script>
+</body>
+</html>

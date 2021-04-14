@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        function pole_kola(r){
+           var $liczba = Math.PI*r*r;
+           var $liczbaZaokraglona = $liczba.toFixed(2);
+           return $liczbaZaokraglona;
+        }
+
+        function obwod_kola(r){
+            var $liczba = 2*Math.PI*r;
+            var $liczbaZaokraglona = $liczba.toFixed(2);
+            return $liczbaZaokraglona;
+        }
+
+        var naszaLiczba=parseInt(prompt("Podaj promień koła",""));
+        if(naszaLiczba == ""){
+            alert("Nie podano wartości!");
+        }else{
+            alert("Pole koła wynosi: "+ pole_kola(naszaLiczba)+" cm^2");
+            alert("Obwód koła wynosi: "+ obwod_kola(naszaLiczba)+" cm^2");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

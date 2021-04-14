@@ -1,0 +1,193 @@
+* {
+  margin: 0 auto;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body,
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+}
+
+#particles-js {
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(27, 27, 27);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+}
+
+.entry-text {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(31, 31, 31, 0.89);
+  border-radius: 55px;
+  text-align: center;
+  color: white;
+  padding: 3%;
+  font-size: 80px;
+  letter-spacing: 0.2em;
+  font-family: 'Amatic SC', cursive;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.entry-text p{
+  font-size: 20px;
+  letter-spacing: 0em;
+  margin: 10px;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+.rainbowText {
+  animation-name: BGC;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes BGC {
+  0% {
+    color: rgb(255, 86, 86);
+  }
+
+  10% {
+    color: rgb(241, 185, 80);
+  }
+
+  20% {
+    color: rgb(255, 255, 98);
+  }
+
+  30% {
+    color: rgb(140, 240, 140);
+  }
+
+  40% {
+    color: rgb(93, 233, 219);
+  }
+
+  50% {
+    color: rgb(92, 92, 255);
+  }
+
+  55% {
+    color: rgb(146, 5, 146);
+  }
+
+  60% {
+    color: rgb(92, 92, 255);
+  }
+
+  65% {
+    color: rgb(93, 233, 219);
+  }
+
+  70% {
+    color: rgb(176, 241, 176);
+  }
+
+  80% {
+    color: rgb(255, 255, 98);
+  }
+
+  90% {
+    color: rgb(253, 193, 82);
+  }
+
+  100% {
+    color: rgb(255, 86, 86);
+  }
+}
+
+#about-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 38vh;
+  background-color: rgb(22, 22, 22);
+  font-family: 'Amatic SC', cursive;
+}
+
+.box h1{
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.box input[type = "number"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 100px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+h1{
+  font-size:40px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.buttons{
+  width: 100%;
+  padding-top: 2vh;
+}
+
+.submit{
+  display:inline-block;
+  border:0;
+  background: none;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+  padding-top: 1vh;
+}
+.box input[type = "submit"]:hover{
+  background: #686868;
+}
+

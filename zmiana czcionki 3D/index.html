@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./icon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This page is part of Dawid's website coding exercise">
+    <meta name="keywords" content="font, font change, javascript, js, coding is fun">
+    <meta name="robots" content="index, follow">
+    <meta author="Dawid Polowczyk">
+    <meta name="title" content="Font Size Exercise">
+    <title>Font Size Exercise</title>
+</head>
+
+<body>
+    <div class="cards-wrapper">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-contents card-front">
+                    <div class="card-depth">
+                        <h2>Fast double click this box to see font change exercise</h2>
+                        <hr>
+                        <p onclick="easteregg()">Author: Dawid Polowczyk</p>
+                    </div>
+                </div>
+                <div class="card-contents card-back">
+                    <div class="card-depth">
+                        <div id="small" onclick="smallText();" onmouseover="mouseOverSmall()" onmouseout="Out()">A</div>
+                        <div id="medium" onclick="mediumText();" onmouseover="mouseOverMedium()" onmouseout="Out()">A</div>
+                        <div id="big" onclick="bigText();" onmouseover="mouseOverBig()" onmouseout="Out()">A</div>
+                        <div class="text-container">
+                            <hr>
+                            <span id="text">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, amet
+                                animi! Perferendis est porro eos cum deleniti sapiente, quibusdam id, quae blanditiis
+                                corrupti quidem assumenda voluptatem et, ad reprehenderit nesciunt.
+                            </span>
+                            <hr>
+                            <p>Fast double click this box to go back</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./fontchange.js"></script>
+    <script src="./panel3d.js"></script>
+</body>
+
+</html>
