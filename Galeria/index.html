@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <meta author="Dawid Polowczyk">
+</head>
+<body>
+<head>
+    <meta charset="utf-8">
+    <title>Zadanie</title>
+    <style>
+        #main {
+            width: 750px;
+        }
+        
+        #zdj1,
+        #zdj2,
+        #zd3,
+        #zd4,
+        #zd5 {
+            width: 150px;
+            height: 150px;
+            float: left;
+            box-sizing: border-box;
+        }
+
+        #duze {
+            height: 150px;
+            width: 90%;
+            float: left;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        img {
+            width: 50%;
+        }
+
+        h1:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id='main'>
+            <div id='zdj1'>
+                <h1>&#8592</h1>
+            </div>
+            <div id='zdj2'>
+            </div>
+            <div id='zd3'>
+            </div>
+            <div id='zd4'>
+            </div>
+            <div id='zd5'>
+                <h1>&#8594</h1>
+            </div>
+            <div id='duze'>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var array = [1, 2, 3, 4, 5, 6, 7];
+        var lewy_przycisk = document.getElementById('zdj1');
+        var lewy = document.getElementById('zdj2');
+        var srodkowy = document.getElementById('zd3');
+        var prawy = document.getElementById('zd4');
+        var prawy_przycisk = document.getElementById('zd5');
+        var dolny = document.getElementById('duze');
+        var a = 1
+
+        lewy.innerHTML = "<img src='zdjecie" + array[a - 1] + ".png'>"
+        srodkowy.innerHTML = "<img src='zdjecie" + array[a] + ".png'>"
+        dolny.innerHTML = "<img src='zdjecie" + array[a] + ".png'>"
+        prawy.innerHTML = "<img src='zdjecie" + array[a + 1] + ".png'>"
+
+        prawy_przycisk.onclick = function () {
+            a++;
+            if (a < 6) {
+                lewy.innerHTML = "<img src='zdjecie" + array[a - 1] + ".png'>"
+                prawy.innerHTML = "<img src='zdjecie" + array[a + 1] + ".png'>"
+            }
+            else if (a == 6) {
+                lewy.innerHTML = "<img src='zdjecie" + array[a - 1] + ".png'>"
+                prawy.innerHTML = "<img src='zdjecie" + array[0] + ".png'>"
+            }
+            else {
+                a = 0;
+                lewy.innerHTML = "<img src='zdjecie" + array[6] + ".png'>"
+                prawy.innerHTML = "<img src='zdjecie" + array[a + 1] + ".png'>"
+            }
+                srodkowy.innerHTML = "<img src='zdjecie" + array[a] + ".png'>"
+                dolny.innerHTML = "<img src='zdjecie" + array[a] + ".png'>"
+        }
+
+
+        lewy_przycisk.onclick = function () {
+            a--;
+            if (a > 0) {
+                lewy.innerHTML = "<img src='zdjecie" + array[a - 1] + ".png'>"
+                prawy.innerHTML = "<img src='zdjecie" + array[a + 1] + ".png'>"
+            }
+            else if (a == 0) {
+                lewy.innerHTML = "<img src='zdjecie" + array[6] + ".png'>"
+                prawy.innerHTML = "<img src='zdjecie" + array[a + 1] + ".png'>"
+            }
+            else {
+                a = 6;
+                lewy.innerHTML = "<img src='zdjecie" + array[a - 1] + ".png'>"
+                prawy.innerHTML = "<img src='zdjecie" + array[0] + ".png'>"
+            }
+            srodkowy.innerHTML = "<img src='zdjecie" + array[a] + ".png'>"
+            dolny.innerHTML = "<img src='zdjecie" + array[a] + ".png'>"
+        }
+    </script>
+
+</body>
+
+</html>

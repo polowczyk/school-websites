@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="Dawid Polowczyk">
+    <title>S1</title>
+    <style>
+        .container {
+            margin: auto;
+            width: 800px;
+        }
+
+        .menu {
+            float: left;
+            width: 200px;
+        }
+
+        .content {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="baner">
+            <a href="index.html"><img src="baner.jpg"></a>
+        </div>
+        <div class="menu">
+            <p>Menu</p>
+            <p><a href="strona1.html">proste działania</a></p>
+            <p><a href="strona2.php">potęgowanie</a></p>
+        </div>
+        <div class="content">
+            <p>Treść strony</p>
+            <h1>PROSTE DZIAŁANIA</h1>
+            <p><i>Podaj pierwszą liczbę: </i><input type="number" id="1liczba"></p>
+            <p><i>Podaj drugą liczbę: </i><input type="number" id="2liczba"></p>
+            <p>
+                <input type="button" value="DODAWANIE" id="dodawanie">
+                <input type="button" value="ODEJMOWANIE" id="odejmowanie">
+                <input type="button" value="MNOŻENIE" id="mnozenie">
+                <input type="button" value="DZIELENIE" id="dzielenie">
+            </p>
+        </div>
+        <script>
+            var dodawanie = document.getElementById("dodawanie");
+            var odejmowanie = document.getElementById("odejmowanie");
+            var mnozenie = document.getElementById("mnozenie");
+            var dzielenie = document.getElementById("dzielenie");
+            dodawanie.onclick = function () {
+                var liczba1 = document.getElementById("1liczba").value;
+                var liczba2 = document.getElementById("2liczba").value;
+                if (liczba1 == "" || liczba2 == "") {
+                    alert("Uzupełnij obie cyfry!");
+                }
+                else {
+                    liczba1 = parseInt(liczba1);
+                    liczba2 = parseInt(liczba2);
+                    var wynik = liczba1 + liczba2;
+                    alert("Wynik dodawania to: " + wynik);
+                }
+            }
+            odejmowanie.onclick = function () {
+                var liczba1 = document.getElementById("1liczba").value;
+                var liczba2 = document.getElementById("2liczba").value;
+                if (liczba1 == "" || liczba2 == "") {
+                    alert("Uzupełnij obie cyfry!");
+                }
+                else {
+                    liczba1 = parseInt(liczba1);
+                    liczba2 = parseInt(liczba2);
+                    var wynik = liczba1 - liczba2;
+                    alert("Wynik dodawania to: " + wynik);
+                }
+            }
+            mnozenie.onclick = function () {
+                var liczba1 = document.getElementById("1liczba").value;
+                var liczba2 = document.getElementById("2liczba").value;
+                if (liczba1 == "" || liczba2 == "") {
+                    alert("Uzupełnij obie cyfry!");
+                }
+                else {
+                    liczba1 = parseInt(liczba1);
+                    liczba2 = parseInt(liczba2);
+                    var wynik = liczba1 * liczba2;
+                    alert("Wynik mnożenia to: " + wynik);
+                }
+            }
+            dzielenie.onclick = function () {
+                var liczba1 = document.getElementById("1liczba").value;
+                var liczba2 = document.getElementById("2liczba").value;
+                if (liczba1 == "" || liczba2 == "") {
+                    alert("Uzupełnij obie cyfry!");
+                }
+                else {
+                    liczba1 = parseInt(liczba1);
+                    liczba2 = parseInt(liczba2);
+                    if (liczba2 == 0) {
+                        alert("Uzupełnij obie cyfry!");
+                    }
+                    else {
+                        var wynik = liczba1 / liczba2;
+                        alert("Wynik dzielenia to: " + wynik);
+                    }
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>
